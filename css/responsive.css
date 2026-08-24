@@ -1,0 +1,48 @@
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:58px;
+    }
+
+    .hero-description{
+        font-size:18px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .header{
+        height:auto;
+        padding:25px 0;
+    }
+
+    .header .container{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .nav ul{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:85vh;
+    }
+
+    .hero-content{
+        padding-bottom:60px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero-button{
+        width:100%;
+        max-width:320px;
+    }
+
+}
