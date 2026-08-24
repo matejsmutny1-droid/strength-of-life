@@ -1,0 +1,69 @@
+.gallery-coming-soon {
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px;
+}
+
+.gallery-coming-soon::before {
+    content: "COMING SOON";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(6rem, 18vw, 18rem);
+    font-weight: 700;
+    color: rgba(255,255,255,0.04);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.gallery-content {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-label {
+    display: inline-block;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.gallery-content h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.95;
+    margin-bottom: 40px;
+}
+
+.gallery-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 60px;
+    color: rgba(255,255,255,0.75);
+}
+
+.gallery-btn {
+    display: inline-block;
+    padding: 20px 50px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.gallery-btn:hover {
+    transform: translateY(-3px);
+}
