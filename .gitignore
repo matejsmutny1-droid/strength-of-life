@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# ZIP archívy
+*.zip
+
+# zálohy
+index-old.html
+
+# node (ak niekedy použiješ)
+node_modules/
+
+# VS Code
+.vscode/
