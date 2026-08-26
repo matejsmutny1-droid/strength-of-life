@@ -109,21 +109,49 @@
 
             <h2>Kontaktný formulár</h2>
 
-            <form class="contact-form">
+            <form
+    class="contact-form"
+    action="https://formsubmit.co/miroslavhajek5@gmail.com"
+    method="POST">
 
-                <input type="text" placeholder="Meno a priezvisko">
+    <input
+        type="text"
+        name="name"
+        placeholder="Meno a priezvisko"
+        required>
 
-                <input type="email" placeholder="E-mail">
+    <input
+        type="email"
+        name="email"
+        placeholder="E-mail"
+        required>
 
-                <input type="tel" placeholder="Telefón">
+    <input
+        type="tel"
+        name="phone"
+        placeholder="Telefón">
 
-                <textarea rows="6" placeholder="Správa"></textarea>
+    <input
+        type="hidden"
+        name="_next"
+        value="https://strengthoflife.sk/success.html">
 
-                <button type="submit">
-                    ODOSLAŤ SPRÁVU
-                </button>
+    <input
+        type="hidden"
+        name="_subject"
+        value="Nový dopyt zo stránky StrengthofLife">
 
-            </form>
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Správa"
+        required></textarea>
+
+    <button type="submit">
+        ODOSLAŤ SPRÁVU
+    </button>
+
+</form>
 
         </div>
 

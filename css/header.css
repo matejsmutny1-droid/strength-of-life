@@ -76,3 +76,21 @@ nav a.active{
     }
 
 }
+header nav ul{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+header nav li{
+    display:block;
+}
+
+header nav a{
+    display:block;
+}
