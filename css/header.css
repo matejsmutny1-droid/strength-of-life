@@ -167,3 +167,30 @@ nav a.active{
     }
 
 }
+@media(max-width:768px){
+
+    .nav{
+        display:block !important;
+    }
+
+    .nav ul{
+        display:flex !important;
+        visibility:visible !important;
+        opacity:1 !important;
+
+        flex-wrap:wrap;
+        justify-content:center;
+
+        gap:15px;
+    }
+
+    .nav li{
+        display:block !important;
+    }
+
+    .nav a{
+        display:block !important;
+        color:#fff !important;
+    }
+
+}
