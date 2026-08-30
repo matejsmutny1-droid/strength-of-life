@@ -61,18 +61,15 @@ nav a.active{
 
     header{
         height:auto;
-        padding:25px 0;
+        padding:15px 0;
     }
 
-    header .container{
-        flex-direction:column;
-        gap:25px;
+    .logo img{
+        width:180px;
     }
 
-    nav ul{
-        gap:20px;
-        flex-wrap:wrap;
-        justify-content:center;
+    nav{
+        display:none;
     }
 
 }
