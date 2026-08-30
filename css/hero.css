@@ -773,3 +773,10 @@
     }
 
 }
+@media(max-width:768px){
+
+    .hero h1{
+        display:none !important;
+    }
+
+}
