@@ -27,3 +27,18 @@ img{
 a{
     text-decoration:none;
 }
+html,
+body{
+    overflow-x:hidden;
+    max-width:100%;
+}
+html,
+body{
+    overflow-x:hidden;
+}
+*{
+    max-width:100%;
+}
+section{
+    overflow:hidden;
+}

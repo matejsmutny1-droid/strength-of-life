@@ -116,9 +116,24 @@
     font-size:18px;
 }
 
-.nav ul{
-    flex-direction:column;
-    gap:15px;
+
 }
+@media(max-width:768px){
+
+    h1{
+        font-size:42px !important;
+        line-height:1.1 !important;
+    }
+
+    h2{
+        font-size:32px !important;
+        line-height:1.1 !important;
+    }
+
+    .services h2,
+    .testimonials-title,
+    .cta-section h2{
+        font-size:42px !important;
+    }
 
 }
