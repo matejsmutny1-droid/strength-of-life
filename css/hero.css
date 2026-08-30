@@ -688,3 +688,24 @@
     }
 
 }
+@media(max-width:768px){
+
+    .testimonials{
+        padding:80px 25px;
+    }
+
+    .testimonials-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .testimonial-card{
+        min-height:auto;
+        padding:30px;
+    }
+
+    .testimonial-text{
+        font-size:22px;
+    }
+
+}

@@ -68,9 +68,7 @@ nav a.active{
         width:180px;
     }
 
-    nav{
-        display:none;
-    }
+
 
 }
 @media(max-width:768px){
