@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letný športový kemp 2026: Všestranný Makač | StrengthofLife</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css">
+    <style>
+        .service-detail {
+            background: #0d0d0d;
+            padding: 140px 0 80px;
+            color: #ffffff;
+        }
+
+        .service-detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .service-image-box {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content h1 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .service-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #a1a1aa;
+            margin-bottom: 40px;
+        }
+
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-item p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #888888;
+        }
+
+        .service-action-box {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-tag span {
+            display: block;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #888888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .price-tag strong {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ff2a1a;
+            line-height: 1;
+        }
+
+        .btn-reserve {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #000000;
+            padding: 18px 36px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .btn-reserve:hover {
+            background: #ff2a1a;
+            color: #ffffff;
+        }
+
+        /* Doplňkové sekcie kempu */
+        .camp-extra-section {
+            background: #0d0d0d;
+            padding: 0 0 100px;
+            color: #ffffff;
+        }
+
+        .camp-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .camp-block {
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .camp-block-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ff2a1a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .term-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff2a1a;
+        }
+
+        .term-card h4 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        .term-card p {
+            font-size: 14px;
+            color: #aaaaaa;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .term-card.full {
+            border-left-color: #444444;
+            opacity: 0.6;
+        }
+
+        .camp-info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .camp-info-list li {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .camp-info-list li::before {
+            content: "•";
+            color: #ff2a1a;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .camp-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .camp-gallery-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .camp-gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Formulár */
+        .form-container {
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .form-container h3 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            background: #1f1f1f;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #ff2a1a;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #dddddd;
+            cursor: pointer;
+        }
+
+        .checkbox-item input {
+            width: auto;
+            accent-color: #ff2a1a;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #ff2a1a;
+            color: #ffffff;
+            border: none;
+            padding: 18px;
+            font-size: 15px;
+            font-weight: 900;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        @media (max-width: 992px) {
+            .service-detail {
+                padding: 100px 0 60px;
+            }
+
+            .service-detail-container, .camp-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .service-image-box {
+                height: 380px;
+            }
+
+            .service-content h1 {
+                font-size: 36px;
+            }
+
+            .service-features-grid, .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .camp-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-action-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .btn-reserve {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .camp-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Strength of Life">
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <ul>
+                <li><a href="index.html">DOMOV</a></li>
+                <li><a href="about.html">O MNE</a></li>
+                <li><a href="services.html" class="active">SLUŽBY</a></li>
+                <li><a href="gallery.html">GALÉRIA</a></li>
+                <li><a href="contact.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="service-detail">
+    <div class="service-detail-container">
+        <div class="service-image-box">
+            <img src="images/kemp-main.jpg" alt="Letný športový kemp Všestranný Makač">
+        </div>
+
+        <div class="service-content">
+            <h1>Letný športový kemp 2026:<br>Všestranný Makač</h1>
+
+            <p class="service-description">
+                5 dní plných atletiky, cyklistiky a gymnastiky. Náš letný kemp je zameraný na komplexný rozvoj dieťaťa – učíme základy, ktoré využije v každom športe, a budujeme tímového ducha.
+            </p>
+
+            <div class="service-features-grid">
+                <div class="feature-item">
+                    <h3>Atletika & sila</h3>
+                    <p>Všeobecná športová príprava a spevnenie tela vlastnou váhou.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Cyklistika & príroda</h3>
+                    <p>Spoznávanie lokality, výlety a budovanie kondície v teréne.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Gymnastika</h3>
+                    <p>Ohybnosť, koordinácia, stabilita a radosť z nového pohybu.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Individuálny prístup</h3>
+                    <p>Kapacita obmedzená na max. 15 atlétov pre plnú pozornosť trénera.</p>
+                </div>
+            </div>
+
+            <div class="service-action-box">
+                <div class="price-tag">
+                    <span>CENA KEMPU</span>
+                    <strong>85€</strong>
+                </div>
+                <a href="#prihlaska" class="btn-reserve">PRIHLÁSIŤ DIEŤA</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="camp-extra-section">
+    <div class="camp-container">
+        
+        <!-- Termíny -->
+        <div class="camp-block">
+            <h2 class="camp-block-title">Termíny kempov 2026</h2>
+            <div class="terms-grid">
+                <div class="term-card full">
+                    <h4>20.7. – 24.7. 2026</h4>
+                    <p>Mladší (5 - 9 rokov)<br><strong style="color: #ff2a1a;">Plne obsadené</strong></p>
+                </div>
+                <div class="term-card">
+                    <h4>27.7. – 31.7. 2026</h4>
+                    <p>Starší (10 - 15 rokov)</p>
+                </div>
+                <div class="term-card">
+                    <h4>10.8. – 14.8. 2026</h4>
+                    <p>Mladší (5 - 9 rokov)</p>
+                </div>
+                <div class="term-card">
+                    <h4>17.8. – 21.8. 2026</h4>
+                    <p>Starší (10 - 15 rokov)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Organizačné pokyny -->
+        <div class="camp-block">
+            <h2 class="camp-block-title">Organizačné informácie</h2>
+            <ul class="camp-info-list">
+                <li>Kempy prebiehajú denne od 8:00 do 15:00 (v prípade potreby je možné dieťa doviesť už od 7:00).</li>
+                <li>V cene je zahrnutý odborný dozor trénerov, celodenný pitný režim a zdravé drobné občerstvenie (ovocie a malé snacky).</li>
+                <li>Aby sme zachovali priateľskú cenu pre všetkých, obedy si deti prinášajú vlastné (formou balíčka).</li>
+                <li>Miesto konania: STRENGTHofLIFE (Budova Domachladu), Fullova 1, Rajec.</li>
+            </ul>
+        </div>
+
+        <!-- Fotogaléria -->
+        <div class="camp-block">
+            <h2 class="camp-block-title">Fotogaléria z kempov</h2>
+            <div class="camp-gallery-grid">
+                <img src="images/kemp1.jpg" alt="Letný kemp foto 1">
+                <img src="images/kemp2.jpg" alt="Letný kemp foto 2">
+                <img src="images/kemp3.jpg" alt="Letný kemp foto 3">
+                <img src="images/kemp4.jpg" alt="Letný kemp foto 4">
+                <img src="images/kemp5.jpg" alt="Letný kemp foto 5">
+                <img src="images/kemp6.jpg" alt="Letný kemp foto 6">
+                <img src="images/kemp7.jpg" alt="Letný kemp foto 7">
+                <img src="images/kemp8.jpg" alt="Letný kemp foto 8">
+            </div>
+        </div>
+
+        <!-- Prihlasovací formulár -->
+        <div class="form-container" id="prihlaska">
+            <h3>Prihlasovací formulár do kempu</h3>
+            
+            <form action="https://formspree.io/f/miroslavhajek5@gmail.com" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="rodic-meno">Meno rodiča *</label>
+                        <input type="text" id="rodic-meno" name="Meno Rodiča" required placeholder="Mária">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rodic-priezvisko">Priezvisko rodiča *</label>
+                        <input type="text" id="rodic-priezvisko" name="Priezvisko Rodiča" required placeholder="Nováková">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="atlet-meno">Meno a priezvisko dieťaťa *</label>
+                        <input type="text" id="atlet-meno" name="Meno Atléta" required placeholder="Adam Novák">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail rodiča *</label>
+                        <input type="email" id="email" name="E-mail" required placeholder="vas@email.sk">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="telefon">Telefón *</label>
+                        <input type="tel" id="telefon" name="Telefón" required placeholder="+421 9XX XXX XXX">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Výber termínu *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Termín[]" value="Starší (27.7. - 31.7. 2026)">
+                                Starší 10 - 15 rokov (27.7. – 31.7.)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Termín[]" value="Mladší (10.8. - 14.8. 2026)">
+                                Mladší 5 - 9 rokov (10.8. – 14.8.)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Termín[]" value="Starší (17.8. - 21.8. 2026)">
+                                Starší 10 - 15 rokov (17.8. – 21.8.)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Odoslať prihlášku</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-cta">
+            <span class="footer-label">ZAČNI DNES</span>
+            <h2>Sila. Kondícia. Výsledky.</h2>
+            <p>Každý progres začína prvým krokom. Napíš mi a spoločne nastavíme plán, ktorý bude fungovať dlhodobo.</p>
+            <div class="footer-buttons">
+                <a href="tel:+421910109147" class="footer-btn">Zavolať</a>
+                <a href="https://wa.me/421910109147" target="_blank" class="footer-btn red">WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Kontakt</h3>
+            <a href="tel:+421910109147">+421 910 109 147</a>
+            <a href="mailto:hello@strengthoflife.sk">hello@strengthoflife.sk</a>
+            <a href="https://www.instagram.com/miroslav_hajek_tri/" target="_blank">IG: @miroslav_hajek_tri</a>
+            <p>Fullova 1<br>Rajec, Slovensko</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 StrengthofLife. Všetky práva vyhradené.</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

@@ -12,6 +12,211 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        .contact-page-section {
+            background: #111111;
+            padding: 160px 0 100px;
+            color: #ffffff;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .contact-header span {
+            color: #ff2a1a;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-header h1 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .contact-header p {
+            font-size: 18px;
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+
+        .contact-grid-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-cards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card-item {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .info-card-item:hover {
+            transform: translateY(-3px);
+            border-color: #ff2a1a;
+        }
+
+        .info-card-icon {
+            font-size: 28px;
+            background: #222222;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-card-text small {
+            display: block;
+            font-size: 13px;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .info-card-text p {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Moderný formulár */
+        .form-container-card {
+            background: #ffffff;
+            color: #000000;
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .form-container-card h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .form-container-card p {
+            color: #666666;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #333333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            background: #f9f9f9;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff2a1a;
+            background: #ffffff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #ff2a1a;
+            color: #ffffff;
+            border: none;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 800;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #000000;
+        }
+
+        .map-section {
+            line-height: 0;
+            background: #111111;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            filter: grayscale(80%) invert(90%) contrast(120%);
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid-wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-header h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .form-container-card {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -30,166 +235,143 @@
 
         <nav class="nav" id="nav-menu">
             <ul>
-                <li><a href="index.html" class="active">DOMOV</a></li>
+                <li><a href="index.html">DOMOV</a></li>
                 <li><a href="about.html">O MNE</a></li>
                 <li><a href="services.html">SLUŽBY</a></li>
                 <li><a href="gallery.html">GALÉRIA</a></li>
-                <li><a href="contact.html">KONTAKT</a></li>
+                <li><a href="contact.html" class="active">KONTAKT</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<section class="contact-hero">
-
-    <div class="container">
-
-        <span>KONTAKT</span>
-
-        <h1>
-            Ozvite sa
-        </h1>
-
-        <p>
-            Pre individuálne tréningy, športovú prípravu detí,
-            rehabilitačné programy alebo laktátové testovanie.
-        </p>
-
-    </div>
-
-</section>
-
-<section class="contact-content">
-
-    <div class="container contact-grid">
-
-        <div class="contact-info">
-
-            <h2>Kontaktné údaje</h2>
-
-            <div class="info-card">
-                <span>📞</span>
-                <div>
-                    <small>Telefón</small>
-                    <p>+421 910 109 147</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <span>✉️</span>
-                <div>
-                    <small>E-mail</small>
-                    <p>hello@strengthoflife.sk</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <span>💬</span>
-                <div>
-                    <small>WhatsApp</small>
-                    <p>Napísať správu</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <span>📍</span>
-                <div>
-                    <small>Adresa</small>
-                    <p>
-                        Fullova 1<br>
-                        015 01 Rajec
-                    </p>
-                </div>
-            </div>
-            <div class="info-card">
-    <span>📸</span>
-    <div>
-        <small>Instagram</small>
-        <p>@miroslav_hajek_tri</p>
-    </div>
-</div>
-
-           
-
+<section class="contact-page-section">
+    <div class="contact-container">
+        
+        <div class="contact-header">
+            <span>KONTAKT</span>
+            <h1>Ozvite sa mi</h1>
+            <p>Máte záujem o individuálne tréningy, športovú prípravu detí, rehabilitačné programy alebo laktátové testovanie? Napíšte mi alebo zavolajte.</p>
         </div>
 
-        <div class="contact-form-wrap">
+        <div class="contact-grid-wrap">
 
-            <h2>Kontaktný formulár</h2>
+            <!-- Kontaktné info karty -->
+            <div class="contact-cards-list">
+                
+                <a href="tel:+421910109147" class="info-card-item">
+                    <div class="info-card-icon">📞</div>
+                    <div class="info-card-text">
+                        <small>Telefón</small>
+                        <p>+421 910 109 147</p>
+                    </div>
+                </a>
 
-            <form
-    class="contact-form"
-    action="https://formsubmit.co/miroslavhajek5@gmail.com"
-    method="POST">
+                <a href="mailto:hello@strengthoflife.sk" class="info-card-item">
+                    <div class="info-card-icon">✉️</div>
+                    <div class="info-card-text">
+                        <small>E-mail</small>
+                        <p>hello@strengthoflife.sk</p>
+                    </div>
+                </a>
 
-    <input
-        type="text"
-        name="name"
-        placeholder="Meno a priezvisko"
-        required>
+                <a href="https://wa.me/421910109147" target="_blank" class="info-card-item">
+                    <div class="info-card-icon">💬</div>
+                    <div class="info-card-text">
+                        <small>WhatsApp</small>
+                        <p>Napísať správu</p>
+                    </div>
+                </a>
 
-    <input
-        type="email"
-        name="email"
-        placeholder="E-mail"
-        required>
+                <div class="info-card-item">
+                    <div class="info-card-icon">📍</div>
+                    <div class="info-card-text">
+                        <small>Adresa tréningov</small>
+                        <p>Fullova 1, 015 01 Rajec</p>
+                    </div>
+                </div>
 
-    <input
-        type="tel"
-        name="phone"
-        placeholder="Telefón">
+                <a href="https://www.instagram.com/miroslav_hajek_tri/" target="_blank" class="info-card-item">
+                    <div class="info-card-icon">📸</div>
+                    <div class="info-card-text">
+                        <small>Instagram</small>
+                        <p>@miroslav_hajek_tri</p>
+                    </div>
+                </a>
 
-    <input
-        type="hidden"
-        name="_next"
-        value="https://strengthoflife.sk/success.html">
+            </div>
 
-    <input
-        type="hidden"
-        name="_subject"
-        value="Nový dopyt zo stránky StrengthofLife">
+            <!-- Formulár -->
+            <div class="form-container-card">
+                <h2>Kontaktný formulár</h2>
+                <p>Vyplňte formulár nižšie a ozvem sa vám hneď, ako to bude možné.</p>
 
-    <textarea
-        name="message"
-        rows="6"
-        placeholder="Správa"
-        required></textarea>
+                <form action="https://formspree.io/f/miroslavhajek5@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Meno a priezvisko *</label>
+                        <input type="text" id="name" name="Meno" required placeholder="Ján Novák">
+                    </div>
 
-    <button type="submit">
-        ODOSLAŤ SPRÁVU
-    </button>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="E-mail" required placeholder="jan.novak@gmail.com">
+                    </div>
 
-</form>
+                    <div class="form-group">
+                        <label for="phone">Telefónne číslo</label>
+                        <input type="tel" id="phone" name="Telefón" placeholder="+421 9XX XXX XXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Vaša správa *</label>
+                        <textarea id="message" name="Správa" rows="5" required placeholder="Napíšte, s čím vám môžem pomôcť..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Odoslať správu</button>
+                </form>
+            </div>
 
         </div>
 
     </div>
-
 </section>
 
+<!-- Mapa -->
 <section class="map-section">
-
     <iframe
         src="https://maps.google.com/maps?q=Fullova%201%20Rajec&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        loading="lazy">
+        loading="lazy"
+        title="Miesto tréningov">
     </iframe>
-
 </section>
 
 <footer class="footer">
+    <div class="footer-top">
+        <div class="footer-cta">
+            <span class="footer-label">ZAČNI DNES</span>
+            <h2>Sila. Kondícia. Výsledky.</h2>
+            <p>Každý progres začína prvým krokom. Napíš mi a spoločne nastavíme plán, ktorý bude fungovať dlhodobo.</p>
+            <div class="footer-buttons">
+                <a href="tel:+421910109147" class="footer-btn">Zavolať</a>
+                <a href="https://wa.me/421910109147" target="_blank" class="footer-btn red">WhatsApp</a>
+            </div>
+        </div>
 
-    <div class="container">
-
-        <img src="images/logo.svg" alt="StrengthofLife">
-
-        <p>
-            © 2026 StrengthofLife. Všetky práva vyhradené.
-        </p>
-
+        <div class="footer-contact">
+            <h3>Kontakt</h3>
+            <a href="tel:+421910109147">+421 910 109 147</a>
+            <a href="mailto:hello@strengthoflife.sk">hello@strengthoflife.sk</a>
+            <a href="https://www.instagram.com/miroslav_hajek_tri/" target="_blank">IG: @miroslav_hajek_tri</a>
+            <p>Fullova 1<br>Rajec, Slovensko</p>
+        </div>
     </div>
 
+    <div class="footer-bottom">
+        <p>© 2026 StrengthofLife. Všetky práva vyhradené.</p>
+    </div>
 </footer>
 
 <script src="js/script.js"></script>
 </body>
+
 </html>

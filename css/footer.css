@@ -1,0 +1,143 @@
+.footer {
+    background: #000000;
+    color: #ffffff;
+    padding: 100px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-top {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.footer-label {
+    display: block;
+    color: #ff2a1a;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.footer-cta h2 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer-cta p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 35px;
+    background: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-btn:hover {
+    background: #e0e0e0;
+}
+
+.footer-btn.red {
+    background: #25d366; /* WhatsApp zelená alebo #ff2a1a pre červenú */
+    color: #ffffff;
+}
+
+.footer-btn.red:hover {
+    opacity: 0.9;
+}
+
+.footer-contact h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.footer-contact a {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: 0.25s;
+}
+
+.footer-contact a:hover {
+    color: #ff2a1a;
+}
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+.footer-bottom {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 992px) {
+    .footer {
+        padding: 60px 0 30px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 0 20px;
+        margin-bottom: 50px;
+    }
+
+    .footer-cta h2 {
+        font-size: 32px;
+    }
+
+    .footer-buttons {
+        flex-direction: column;
+    }
+
+    .footer-btn {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        padding: 20px 20px 0;
+    }
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Športová príprava detí | StrengthofLife</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css">
+    <style>
+        .service-detail {
+            background: #ffffff;
+            padding: 140px 0 100px;
+            color: #111111;
+        }
+
+        .service-detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .service-image-box {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content h1 {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: #111111;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .service-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 40px;
+        }
+
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #111111;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-item p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #666666;
+        }
+
+        .service-action-box {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .price-tag span {
+            display: block;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #888888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .price-tag strong {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ff2a1a;
+            line-height: 1;
+        }
+
+        .btn-reserve {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ff2a1a;
+            color: #ffffff;
+            padding: 18px 36px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .btn-reserve:hover {
+            background: #111111;
+            color: #ffffff;
+        }
+
+        /* Špecifický blok pre harmonogram skupín */
+        .kids-schedule-section {
+            background: #f8f9fa;
+            border-top: 1px solid #eaeaea;
+            padding: 80px 0;
+        }
+
+        .kids-schedule-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .kids-schedule-container h2 {
+            font-size: 28px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: #111111;
+            letter-spacing: -0.5px;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .schedule-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .schedule-card h4 {
+            color: #ff2a1a;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .schedule-card p {
+            font-size: 15px;
+            color: #555555;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 992px) {
+            .service-detail {
+                padding: 100px 0 60px;
+            }
+
+            .service-detail-container, .kids-schedule-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .service-image-box {
+                height: 380px;
+            }
+
+            .service-content h1 {
+                font-size: 38px;
+            }
+
+            .service-features-grid, .schedule-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-action-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .btn-reserve {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Strength of Life">
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <ul>
+                <li><a href="index.html">DOMOV</a></li>
+                <li><a href="about.html">O MNE</a></li>
+                <li><a href="services.html" class="active">SLUŽBY</a></li>
+                <li><a href="gallery.html">GALÉRIA</a></li>
+                <li><a href="contact.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="service-detail">
+    <div class="service-detail-container">
+        <div class="service-image-box">
+            <img src="images/kids.jpg" alt="Športová príprava detí">
+        </div>
+
+        <div class="service-content">
+            <h1>Športová príprava<br>detí</h1>
+
+            <p class="service-description">
+                Darujem vášmu dieťaťu zdravý pohyb a pevný charakter. Hravou formou budujeme základy pre jeho aktívnu budúcnosť, silu, obratnosť a disciplínu v motivujúcom kolektíve.
+            </p>
+
+            <div class="service-features-grid">
+                <div class="feature-item">
+                    <h3>Všestrannosť</h3>
+                    <p>Základy gymnastiky, kondície a pohybových hier pre zdravý vývoj.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Zdravý chrbát</h3>
+                    <p>Cvičenia zamerané na správne držanie tela a spevnenie stredu tela.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Skvelá partia</h3>
+                    <p>Budovanie tímu, noví kamaráti a radosť zo spoločného pohybu.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Mentálna odolnosť</h3>
+                    <p>Posilňovanie sebavedomia, disciplíny a prirodzenej túžby zlepšovať sa.</p>
+                </div>
+            </div>
+
+            <div class="service-action-box">
+                <div class="price-tag">
+                    <span>CENA TRÉNINGU</span>
+                    <strong>6€</strong>
+                </div>
+                <a href="contact.html" class="btn-reserve">REZERVOVAŤ MIESTO</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="kids-schedule-section">
+    <div class="kids-schedule-container">
+        <h2>Harmonogram tréningových skupín</h2>
+        <div class="schedule-grid">
+            <div class="schedule-card">
+                <h4>Prípravka (vek 5–8 r.)</h4>
+                <p>Pondelok & Streda — 16:00</p>
+            </div>
+            <div class="schedule-card">
+                <h4>Juniori (vek 9–15 r.)</h4>
+                <p>Utorok & Štvrtok — 16:00</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-cta">
+            <span class="footer-label">ZAČNI DNES</span>
+            <h2>Sila. Kondícia. Výsledky.</h2>
+            <p>Každý progres začína prvým krokom. Napíš mi a spoločne nastavíme plán, ktorý bude fungovať dlhodobo.</p>
+            <div class="footer-buttons">
+                <a href="tel:+421910109147" class="footer-btn">Zavolať</a>
+                <a href="https://wa.me/421910109147" target="_blank" class="footer-btn red">WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Kontakt</h3>
+            <a href="tel:+421910109147">+421 910 109 147</a>
+            <a href="mailto:hello@strengthoflife.sk">hello@strengthoflife.sk</a>
+            <a href="https://www.instagram.com/miroslav_hajek_tri/" target="_blank">IG: @miroslav_hajek_tri</a>
+            <p>Fullova 1<br>Rajec, Slovensko</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 StrengthofLife. Všetky práva vyhradené.</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>
