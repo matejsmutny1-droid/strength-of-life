@@ -1,139 +1,43 @@
-@media(max-width:992px){
+/* Globálne prispôsobenie obsahu */
 
-    .hero h1{
-        font-size:58px;
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 4.5rem;
     }
-
-    .hero-description{
-        font-size:18px;
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
-@media(max-width:768px){
-
-    .header{
-        height:auto;
-        padding:25px 0;
+@media (max-width: 992px) {
+    .hero {
+        padding: 100px 20px 60px;
     }
-
-    .header .container{
-        flex-direction:column;
-        gap:25px;
+    .hero h1 {
+        font-size: 3.5rem;
     }
-
-    .nav ul{
-        gap:20px;
-        flex-wrap:wrap;
-        justify-content:center;
+    .hero h2 {
+        font-size: 2rem;
     }
-
-    .hero{
-        min-height:85vh;
+    .testimonials-grid {
+        grid-template-columns: 1fr;
     }
+}
 
-    .hero-content{
-        padding-bottom:60px;
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem !important;
     }
-
-    .hero h1{
-        font-size:42px;
+    .hero h2 {
+        font-size: 1.6rem !important;
     }
-
-    .hero-button{
-        width:100%;
-        max-width:320px;
+    .hero-text {
+        font-size: 16px;
     }
-
-}
-@media (max-width: 1400px){
-
-.hero h1{
-    font-size: clamp(4rem, 9vw, 7rem);
-}
-
-.hero h2{
-    font-size: clamp(2rem, 4vw, 4rem);
-}
-
-}
-@media (max-width: 1200px){
-
-.nav ul{
-    gap:40px;
-}
-
-.hero h1{
-    font-size:5rem;
-}
-
-.hero h2{
-    font-size:3rem;
-}
-
-.hero p{
-    max-width:800px;
-}
-
-}
-@media (max-width: 992px){
-
-.header .container{
-    flex-direction:column;
-    gap:20px;
-}
-
-.nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
-}
-
-.hero h1{
-    font-size:4rem;
-}
-
-.hero h2{
-    font-size:2.5rem;
-}
-
-}
-@media (max-width: 768px){
-
-.hero{
-    padding:180px 20px 100px;
-}
-
-.hero h1{
-    font-size:3rem;
-}
-
-.hero h2{
-    font-size:2rem;
-}
-
-.hero p{
-    font-size:18px;
-}
-
-
-}
-@media(max-width:768px){
-
-    h1{
-        font-size:42px !important;
-        line-height:1.1 !important;
+    .services-grid {
+        grid-template-columns: 1fr;
     }
-
-    h2{
-        font-size:32px !important;
-        line-height:1.1 !important;
+    .service-card {
+        min-height: auto;
     }
-
-    .services h2,
-    .testimonials-title,
-    .cta-section h2{
-        font-size:42px !important;
-    }
-
 }

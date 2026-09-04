@@ -17,26 +17,27 @@
 <body>
 
 <header class="header">
-
     <div class="container">
-
         <a href="index.html" class="logo">
-            <img src="images/logo.svg" alt="StrengthofLife">
+            <img src="images/logo.svg" alt="Strength of Life">
         </a>
 
-        <nav class="nav">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
             <ul>
-                <li><a href="index.html">DOMOV</a></li>
+                <li><a href="index.html" class="active">DOMOV</a></li>
                 <li><a href="about.html">O MNE</a></li>
-                
                 <li><a href="services.html">SLUŽBY</a></li>
                 <li><a href="gallery.html">GALÉRIA</a></li>
                 <li><a href="contact.html">KONTAKT</a></li>
             </ul>
         </nav>
-
     </div>
-
 </header>
 
 <section class="about-hero">
@@ -290,5 +291,6 @@
 
 </section>
 
+<script src="js/script.js"></script>
 </body>
 </html>
