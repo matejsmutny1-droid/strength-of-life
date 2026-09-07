@@ -86,106 +86,186 @@
 }
 
 
-/* --- SERVICES SECTION --- */
+/* --- SERVICES SECTION (ARCHITECTURAL LIST LAYOUT) --- */
 .services {
-    background: #121212;
+    background: #0a0a0a;
     padding: 120px 0;
+}
+
+.services-top {
+    margin-bottom: 70px;
 }
 
 .services-label {
     display: block;
     color: #ff2a1a;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.services h2, .services-title {
+.services h2 {
     color: #ffffff;
-    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    font-size: clamp(2.2rem, 4.5vw, 4.5rem);
     line-height: 1.05;
     font-weight: 900;
-    margin-bottom: 60px;
+    margin: 0;
     letter-spacing: -1px;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.service-card {
-    background: #1a1a1a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 45px 30px 35px;
-    min-height: 500px;
+/* Zoznam namiesto mriežky škatúľ */
+.services-list {
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
-    overflow: hidden;
+    background: transparent;
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 42, 26, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+/* Hover efekt pre celý riadok */
+.service-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+    padding-left: 35px;
+    padding-right: 35px;
+    border-bottom-color: #ff2a1a;
 }
 
-.service-number {
-    color: #ff2a1a;
-    font-size: 56px;
+.service-num {
+    font-size: 32px;
     font-weight: 900;
-    line-height: 1;
-    margin-bottom: 25px;
+    color: #ff2a1a;
     letter-spacing: -1px;
 }
 
-.service-card h3 {
+.service-info h3 {
     color: #ffffff;
-    font-size: 26px;
-    line-height: 1.2;
+    font-size: 28px;
     font-weight: 800;
-    margin-bottom: 18px;
+    margin: 0 0 8px 0;
     letter-spacing: -0.5px;
+    transition: color 0.3s ease;
 }
 
-.service-card p {
-    color: #aaaaaa;
+.service-info p {
+    color: #888888;
     font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: auto;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 750px;
+    transition: color 0.3s ease;
 }
 
-.service-btn {
+.service-item:hover .service-info h3 {
+    color: #ffffff;
+}
+
+.service-item:hover .service-info p {
+    color: #cccccc;
+}
+
+/* Akcia vpravo */
+.service-action {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.06);
+    gap: 15px;
+}
+
+.service-btn-text {
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
-    text-decoration: none;
-    text-align: center;
-    padding: 16px 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-top: 35px;
+    opacity: 0.5;
     transition: all 0.3s ease;
 }
 
-.service-card:hover .service-btn,
-.service-btn:hover {
+.service-arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover .service-btn-text {
+    opacity: 1;
+    color: #ff2a1a;
+}
+
+.service-item:hover .service-arrow {
     background: #ff2a1a;
     border-color: #ff2a1a;
-    color: #ffffff;
+    transform: translateX(5px);
+}
+
+/* Responsivita pre mobil */
+@media (max-width: 992px) {
+    .service-item {
+        grid-template-columns: 60px 1fr;
+        gap: 20px;
+        padding: 30px 10px;
+    }
+
+    .service-action {
+        display: none; /* Na mobile stačí kliknúť na celý riadok */
+    }
+}
+
+@media (max-width: 576px) {
+    .service-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service-num {
+        font-size: 24px;
+    }
+
+    .service-info h3 {
+        font-size: 22px;
+    }
+}
+
+/* Responsivita */
+@media (max-width: 768px) {
+    .services {
+        padding: 80px 0;
+    }
+
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .service-slide {
+        flex: 0 0 290px; /* Na mobile menšia šírka, vidno ďalšiu kartu */
+        min-height: 400px;
+        padding: 35px 25px 30px;
+    }
+
+    .slider-controls {
+        display: none; /* Na mobile sa scrolluje prirodzene prstom */
+    }
 }
 
 

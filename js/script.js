@@ -30,3 +30,18 @@ window.addEventListener('scroll', () => {
 
     lastScroll = currentScroll;
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('servicesSlider');
+    const prevBtn = document.getElementById('slidePrev');
+    const nextBtn = document.getElementById('slideNext');
+
+    if (slider && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -410, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: 410, behavior: 'smooth' });
+        });
+    }
+});
