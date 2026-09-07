@@ -1,16 +1,136 @@
 <!DOCTYPE html>
 <html lang="sk">
+
 <head>
     <meta charset="UTF-8">
-    <title>Ďakujeme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Správa odoslaná | StrengthofLife</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        .success-page {
+            background: #111111;
+            color: #ffffff;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+
+        .success-card {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 50px 40px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 42, 26, 0.15);
+            border: 2px solid #ff2a1a;
+            color: #ff2a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 25px;
+        }
+
+        .success-card h1 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .success-card p {
+            color: #aaaaaa;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .redirect-text {
+            font-size: 14px;
+            color: #777777;
+            margin-top: 20px;
+        }
+
+        .redirect-text span {
+            color: #ff2a1a;
+            font-weight: 800;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background: #ff2a1a;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background: #ffffff;
+            color: #111111;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Ďakujeme.</h1>
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Strength of Life">
+        </a>
+    </div>
+</header>
 
-<p>Vaša správa bola úspešne odoslaná.</p>
+<section class="success-page">
+    <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h1>Správa bola odoslaná!</h1>
+        <p>Ďakujem za záujem. Vaša správa bola úspešne doručená a ozvem sa vám hneď, ako to bude možné.</p>
+        
+        <a href="index.html" class="btn-home">Späť na hlavnú stránku</a>
 
-<a href="index.html">Späť na stránku</a>
+        <div class="redirect-text">
+            Automatické presmerovanie za <span id="countdown">5</span> sekúnd...
+        </div>
+    </div>
+</section>
+
+<script>
+    // Odpočet a automatické presmerovanie
+    let seconds = 5;
+    const countdownEl = document.getElementById('countdown');
+
+    const timer = setInterval(() => {
+        seconds--;
+        countdownEl.textContent = seconds;
+        if (seconds <= 0) {
+            clearInterval(timer);
+            window.location.href = 'index.html';
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>

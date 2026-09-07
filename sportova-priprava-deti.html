@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Športová príprava detí | StrengthofLife</title>
+    <title>Všeobecná športová príprava detí | StrengthofLife</title>
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
@@ -14,7 +14,7 @@
     <style>
         .service-detail {
             background: #ffffff;
-            padding: 140px 0 100px;
+            padding: 140px 0 80px;
             color: #111111;
         }
 
@@ -44,7 +44,7 @@
         }
 
         .service-content h1 {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 25px;
@@ -64,7 +64,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .feature-item h3 {
@@ -129,62 +129,159 @@
             color: #ffffff;
         }
 
-        /* Špecifický blok pre harmonogram skupín */
-        .kids-schedule-section {
+        /* SYMETRICKÁ REGISTRAČNÁ SEKCIA CEZ CELÚ ŠÍRKU */
+        .registration-section {
             background: #f8f9fa;
-            border-top: 1px solid #eaeaea;
-            padding: 80px 0;
+            border-top: 1px solid #e5e5e5;
+            padding: 100px 0;
         }
 
-        .kids-schedule-container {
-            max-width: 1400px;
+        .registration-container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .kids-schedule-container h2 {
-            font-size: 28px;
+        .capacity-banner {
+            font-size: 38px;
             font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 30px;
+            line-height: 1.25;
             color: #111111;
-            letter-spacing: -0.5px;
-        }
-
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .schedule-card {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #e5e5e5;
-        }
-
-        .schedule-card h4 {
-            color: #ff2a1a;
-            font-size: 18px;
-            font-weight: 800;
-            margin-bottom: 8px;
             text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
         }
 
-        .schedule-card p {
+        .registration-card {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            text-align: left;
+        }
+
+        .registration-card h2 {
+            font-size: 22px;
+            font-weight: 900;
+            color: #111111;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ff2a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            color: #111111;
+            margin-bottom: 8px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 14px 16px;
             font-size: 15px;
-            color: #555555;
-            margin: 0;
+            color: #111111;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff2a1a;
+        }
+
+        .checkbox-group-label {
+            font-size: 13px;
+            font-weight: 800;
+            color: #111111;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9fa;
+            border: 1px solid #e5e5e5;
+            padding: 14px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .checkbox-item:hover {
+            border-color: #ff2a1a;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #ff2a1a;
+            cursor: pointer;
+        }
+
+        .checkbox-item span {
+            font-size: 14px;
             font-weight: 600;
+            color: #333333;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #ff2a1a;
+            color: #ffffff;
+            border: none;
+            padding: 18px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: #111111;
+        }
+
+        .btn-submit:disabled {
+            background: #777777;
+            cursor: not-allowed;
         }
 
         @media (max-width: 992px) {
             .service-detail {
-                padding: 100px 0 60px;
+                padding: 100px 0 50px;
             }
 
-            .service-detail-container, .kids-schedule-container {
+            .service-detail-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
                 padding: 0 20px;
@@ -195,12 +292,12 @@
             }
 
             .service-content h1 {
-                font-size: 38px;
+                font-size: 36px;
             }
 
-            .service-features-grid, .schedule-grid {
+            .service-features-grid,
+            .checkbox-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
 
             .service-action-box {
@@ -211,6 +308,14 @@
 
             .btn-reserve {
                 width: 100%;
+            }
+
+            .capacity-banner {
+                font-size: 26px;
+            }
+
+            .registration-card {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -244,63 +349,115 @@
 
 <section class="service-detail">
     <div class="service-detail-container">
+        
         <div class="service-image-box">
-            <img src="images/kids.jpg" alt="Športová príprava detí">
+            <img src="images/kids.jpg" alt="Všeobecná športová príprava detí">
         </div>
 
         <div class="service-content">
-            <h1>Športová príprava<br>detí</h1>
+            <h1>Všeobecná športová<br>príprava detí</h1>
 
             <p class="service-description">
-                Darujem vášmu dieťaťu zdravý pohyb a pevný charakter. Hravou formou budujeme základy pre jeho aktívnu budúcnosť, silu, obratnosť a disciplínu v motivujúcom kolektíve.
+                Budujeme všestranné pohybové základy, koordináciu a zdravý vzťah k športu. Tréningy sú navrhnuté tak, aby deti napredovali hravou, no systematickou formou bez zbytočného tlaku na výkon.
             </p>
 
             <div class="service-features-grid">
                 <div class="feature-item">
-                    <h3>Všestrannosť</h3>
-                    <p>Základy gymnastiky, kondície a pohybových hier pre zdravý vývoj.</p>
+                    <h3>Pohybový základ</h3>
+                    <p>Rozvoj obratnosti, rýchlosti, rovnováhy a motoriky.</p>
                 </div>
 
                 <div class="feature-item">
-                    <h3>Zdravý chrbát</h3>
-                    <p>Cvičenia zamerané na správne držanie tela a spevnenie stredu tela.</p>
+                    <h3>Správne návyky</h3>
+                    <p>Učíme deti techniku pohybu a držanie tela od útleho veku.</p>
                 </div>
 
                 <div class="feature-item">
-                    <h3>Skvelá partia</h3>
-                    <p>Budovanie tímu, noví kamaráti a radosť zo spoločného pohybu.</p>
+                    <h3>Tímový duch</h3>
+                    <p>Budovanie disciplíny, rešpektu a priateľstiev v kolektíve.</p>
                 </div>
 
                 <div class="feature-item">
-                    <h3>Mentálna odolnosť</h3>
-                    <p>Posilňovanie sebavedomia, disciplíny a prirodzenej túžby zlepšovať sa.</p>
+                    <h3>Bezpečie a radosť</h3>
+                    <p>Odborné vedenie s dôrazom na radosť z pohybu a hru.</p>
                 </div>
             </div>
 
             <div class="service-action-box">
                 <div class="price-tag">
-                    <span>CENA TRÉNINGU</span>
-                    <strong>6€</strong>
+                    <span>MESAČNÝ POPLATOK</span>
+                    <strong>35€</strong>
                 </div>
-                <a href="contact.html" class="btn-reserve">REZERVOVAŤ MIESTO</a>
+                <a href="#prihlasenie" class="btn-reserve">PRIHLÁSIŤ DIEŤA</a>
             </div>
+
         </div>
     </div>
 </section>
 
-<section class="kids-schedule-section">
-    <div class="kids-schedule-container">
-        <h2>Harmonogram tréningových skupín</h2>
-        <div class="schedule-grid">
-            <div class="schedule-card">
-                <h4>Prípravka (vek 5–8 r.)</h4>
-                <p>Pondelok & Streda — 16:00</p>
-            </div>
-            <div class="schedule-card">
-                <h4>Juniori (vek 9–15 r.)</h4>
-                <p>Utorok & Štvrtok — 16:00</p>
-            </div>
+<!-- SEKCIA PRIHLÁSENIA S FORMULÁROM -->
+<section class="registration-section" id="prihlasenie">
+    <div class="registration-container">
+        
+        <h2 class="capacity-banner">
+            KAPACITA SKUPÍN JE OBMEDZENÁ PRE ZACHOVANIE KVALITY. REZERVUJTE SI MIESTO VČAS.
+        </h2>
+
+        <div class="registration-card">
+            <h2>PRIHLÁSIŤ DIEŤA DO SKUPINY</h2>
+
+            <form id="kidsForm" action="https://formspree.io/f/xzebjjng" method="POST">
+                
+                <div class="form-group">
+                    <label for="parent_name">Meno a Priezvisko rodiča *</label>
+                    <input type="text" id="parent_name" name="parent_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="child_name">Meno a Priezvisko Atléta *</label>
+                    <input type="text" id="child_name" name="child_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefón *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+421" required>
+                </div>
+
+                <div class="form-group">
+                    <span class="checkbox-group-label">Výber z viac možností *</span>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="Skupina[]" value="Pondelok 16:00 - Mladší 5 - 8 rokov">
+                            <span>Pondelok 16:00 - Mladší 5 - 8 rokov</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="Skupina[]" value="Utorok 16:00 - Starší 9 - 15 rokov">
+                            <span>Utorok 16:00 - Starší 9 - 15 rokov</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="Skupina[]" value="Streda 16:00 - Mladší 5 - 8 rokov">
+                            <span>Streda 16:00 - Mladší 5 - 8 rokov</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="Skupina[]" value="Štvrtok 16:00 - Starší 9 - 15 rokov">
+                            <span>Štvrtok 16:00 - Starší 9 - 15 rokov</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Odoslať</button>
+
+            </form>
         </div>
+
     </div>
 </section>
 
@@ -331,6 +488,46 @@
 </footer>
 
 <script src="js/script.js"></script>
+
+<script>
+    const kidsForm = document.getElementById('kidsForm');
+    
+    if (kidsForm) {
+        kidsForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = kidsForm.querySelector('.btn-submit');
+            const originalText = btn.textContent;
+            btn.textContent = 'Odosiela sa...';
+            btn.disabled = true;
+
+            const formData = new FormData(kidsForm);
+
+            try {
+                const response = await fetch(kidsForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    window.location.href = 'success.html';
+                } else {
+                    alert('Nastal problém pri odosielaní. Skúste to prosím znova.');
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }
+            } catch (error) {
+                alert('Chyba pripojenia. Skontrolujte internet a skúste to znova.');
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
+        });
+    }
+</script>
+
 </body>
 
 </html>

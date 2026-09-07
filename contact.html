@@ -189,6 +189,11 @@
             background: #000000;
         }
 
+        .btn-submit:disabled {
+            background: #777777;
+            cursor: not-allowed;
+        }
+
         .map-section {
             line-height: 0;
             background: #111111;
@@ -306,7 +311,7 @@
                 <h2>Kontaktný formulár</h2>
                 <p>Vyplňte formulár nižšie a ozvem sa vám hneď, ako to bude možné.</p>
 
-                <form action="https://formspree.io/f/miroslavhajek5@gmail.com" method="POST">
+                <form id="contactForm" action="https://formspree.io/f/mbgjzznv" method="POST">
                     <div class="form-group">
                         <label for="name">Meno a priezvisko *</label>
                         <input type="text" id="name" name="Meno" required placeholder="Ján Novák">
@@ -372,6 +377,44 @@
 </footer>
 
 <script src="js/script.js"></script>
+
+<script>
+    const form = document.getElementById('contactForm');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const btn = form.querySelector('.btn-submit');
+        const originalText = btn.textContent;
+        btn.textContent = 'Odosiela sa...';
+        btn.disabled = true;
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                window.location.href = 'success.html';
+            } else {
+                alert('Nastal problém pri odosielaní. Skúste to prosím znova.');
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
+        } catch (error) {
+            alert('Chyba pripojenia. Skontrolujte internet a skúste to znova.');
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }
+    });
+</script>
+
 </body>
 
 </html>
