@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galéria | StrengthofLife</title>
+    <meta name="description" content="Galéria fotografií z tréningov a športovej prípravy StrengthofLife v Rajci.">
+    <meta property="og:title" content="Galéria | StrengthofLife Rajec">
+    <meta property="og:description" content="Galéria fotografií z tréningov a športovej prípravy StrengthofLife v Rajci.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sk_SK">
+    <meta name="theme-color" content="#000000">
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
@@ -18,18 +24,18 @@
             <img src="images/logo.svg" alt="Strength of Life">
         </a>
 
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Otvoriť navigáciu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <nav class="nav" id="nav-menu">
+        <nav class="nav" id="nav-menu" aria-label="Hlavná navigácia">
             <ul>
-                <li><a href="index.html" class="active">DOMOV</a></li>
+                <li><a href="index.html">DOMOV</a></li>
                 <li><a href="about.html">O MNE</a></li>
                 <li><a href="services.html">SLUŽBY</a></li>
-                <li><a href="gallery.html">GALÉRIA</a></li>
+                <li><a href="gallery.html" class="active" aria-current="page">GALÉRIA</a></li>
                 <li><a href="contact.html">KONTAKT</a></li>
             </ul>
         </nav>

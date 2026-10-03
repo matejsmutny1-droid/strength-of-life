@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Všeobecná športová príprava detí | StrengthofLife</title>
+    <title>Športová príprava detí v Rajci | Miroslav Hájek</title>
+    <meta name="description" content="Športová príprava detí v Rajci s trénerom Miroslavom Hájekom. Skupiny pre deti 5–8 a 9–15 rokov, tréning 6 € za jednotku.">
+    <meta property="og:title" content="Športová príprava detí v Rajci | Miroslav Hájek">
+    <meta property="og:description" content="Silné, zdravé a sebavedomé deti. Hravý pohybový rozvoj v Rajci pre deti od 5 do 15 rokov. Tréner Miroslav Hájek.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sk_SK">
+    <meta name="theme-color" content="#000000">
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
@@ -90,6 +96,55 @@
             border-top: 1px solid #e5e5e5;
         }
 
+        .service-details-note {
+            margin-top: 18px;
+            color: #666666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .parent-feedback {
+            background: #111111;
+            color: #ffffff;
+            padding: 80px 20px;
+        }
+
+        .parent-feedback-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .parent-feedback h2 {
+            margin: 0 0 32px;
+            font-size: 34px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .parent-feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .parent-feedback blockquote {
+            margin: 0;
+            padding: 28px;
+            background: #1a1a1a;
+            border-left: 3px solid #ff2a1a;
+            color: #eeeeee;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .parent-feedback cite {
+            display: block;
+            margin-top: 16px;
+            color: #aaaaaa;
+            font-size: 14px;
+            font-style: normal;
+        }
+
         .price-tag span {
             display: block;
             font-size: 12px;
@@ -111,6 +166,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
             background: #ff2a1a;
             color: #ffffff;
             padding: 18px 36px;
@@ -317,6 +373,64 @@
             .registration-card {
                 padding: 30px 20px;
             }
+
+            .parent-feedback-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-detail-container {
+                padding: 0 16px;
+            }
+
+            .service-image-box {
+                height: 280px;
+            }
+
+            .service-content h1 {
+                font-size: 30px;
+                letter-spacing: -0.5px;
+            }
+
+            .service-description {
+                font-size: 16px;
+            }
+
+            .service-action-box {
+                width: 100%;
+            }
+
+            .btn-reserve {
+                padding: 16px 18px;
+                font-size: 13px;
+            }
+
+            .capacity-banner {
+                font-size: 21px;
+                letter-spacing: -0.5px;
+            }
+
+            .parent-feedback {
+                padding: 60px 16px;
+            }
+
+            .parent-feedback h2 {
+                font-size: 26px;
+            }
+
+            .parent-feedback blockquote {
+                padding: 22px 18px;
+                font-size: 16px;
+            }
+
+            .registration-container {
+                padding: 0 16px;
+            }
+
+            .registration-card {
+                padding: 26px 18px;
+            }
         }
     </style>
 </head>
@@ -329,13 +443,13 @@
             <img src="images/logo.svg" alt="Strength of Life">
         </a>
 
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Otvoriť navigáciu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <nav class="nav" id="nav-menu">
+        <nav class="nav" id="nav-menu" aria-label="Hlavná navigácia">
             <ul>
                 <li><a href="index.html">DOMOV</a></li>
                 <li><a href="about.html">O MNE</a></li>
@@ -351,46 +465,67 @@
     <div class="service-detail-container">
         
         <div class="service-image-box">
-            <img src="images/kids.jpg" alt="Všeobecná športová príprava detí">
+            <img src="images/services2.jpg" alt="Všeobecná športová príprava detí">
         </div>
 
         <div class="service-content">
             <h1>Všeobecná športová<br>príprava detí</h1>
 
             <p class="service-description">
-                Budujeme všestranné pohybové základy, koordináciu a zdravý vzťah k športu. Tréningy sú navrhnuté tak, aby deti napredovali hravou, no systematickou formou bez zbytočného tlaku na výkon.
+                Silné, zdravé a sebavedomé deti. Komplexný pohybový rozvoj, ktorý učí deti správne behať, skákať a hýbať sa bez bolesti — a pomáha im budovať lásku k športu na celý život.
             </p>
 
             <div class="service-features-grid">
                 <div class="feature-item">
-                    <h3>Pohybový základ</h3>
-                    <p>Rozvoj obratnosti, rýchlosti, rovnováhy a motoriky.</p>
+                    <h3>Mladší: 5–8 rokov</h3>
+                    <p>Pondelok a streda o 16:00. Hravá motorika, základné pohybové návyky a radosť z hry.</p>
                 </div>
 
                 <div class="feature-item">
-                    <h3>Správne návyky</h3>
-                    <p>Učíme deti techniku pohybu a držanie tela od útleho veku.</p>
+                    <h3>Starší: 9–15 rokov</h3>
+                    <p>Utorok a štvrtok o 16:00. Sila, technika behu, kondícia a tímová dynamika.</p>
                 </div>
 
                 <div class="feature-item">
-                    <h3>Tímový duch</h3>
-                    <p>Budovanie disciplíny, rešpektu a priateľstiev v kolektíve.</p>
+                    <h3>Veľkosť skupiny</h3>
+                    <p>Skupiny sú limitované na 10 až 15 detí, aby mal tréner čas venovať sa každému zverencovi.</p>
                 </div>
 
                 <div class="feature-item">
-                    <h3>Bezpečie a radosť</h3>
-                    <p>Odborné vedenie s dôrazom na radosť z pohybu a hru.</p>
+                    <h3>Miesto tréningov</h3>
+                    <p>Športové centrum STRENGTHofLIFE, Fullova 1, Rajec.</p>
                 </div>
             </div>
 
             <div class="service-action-box">
                 <div class="price-tag">
-                    <span>MESAČNÝ POPLATOK</span>
-                    <strong>35€</strong>
+                    <span>CENA ZA TRÉNING</span>
+                    <strong>6 €</strong>
                 </div>
                 <a href="#prihlasenie" class="btn-reserve">PRIHLÁSIŤ DIEŤA</a>
             </div>
+            <p class="service-details-note">Mesačné predplatné sa vypočíta podľa kalendára a počtu tréningov v danom mesiaci. Platí sa počas prvého týždňa v mesiaci.</p>
+            <p class="service-details-note"><strong>Tréner: Miroslav Hájek</strong> · Kapacita skupín je obmedzená, miesto odporúčame rezervovať včas.</p>
 
+        </div>
+    </div>
+</section>
+
+<section class="parent-feedback">
+    <div class="parent-feedback-container">
+        <h2>Výsledky, ktoré vidia rodičia doma</h2>
+        <div class="parent-feedback-grid">
+            <blockquote>
+                „Konečne tréner, ktorý vie deti nadchnúť a zároveň ich udržať v pozornosti.“
+            </blockquote>
+            <blockquote>
+                „Oceňujem trpezlivosť a férový prístup. Žiadny krik, ale prirodzená autorita, pri ktorej sa deti neboja skúšať nové veci.“
+                <cite>Mamička 11-ročnej dcéry</cite>
+            </blockquote>
+            <blockquote>
+                „Menej času pri mobile, viac energie doma.“
+                <cite>„Syn začal vnímať svoje telo úplne inak. Zlepšil sa v škole na telesnej, prestal sa hrbiť a na každý tréning chodí s obrovským nadšením.“ — Rodič 8-ročného chlapca</cite>
+            </blockquote>
         </div>
     </div>
 </section>
@@ -414,7 +549,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="child_name">Meno a Priezvisko Atléta *</label>
+                    <label for="child_name">Meno a priezvisko dieťaťa *</label>
                     <input type="text" id="child_name" name="child_name" required>
                 </div>
 
@@ -429,26 +564,26 @@
                 </div>
 
                 <div class="form-group">
-                    <span class="checkbox-group-label">Výber z viac možností *</span>
+                    <span class="checkbox-group-label">Vyberte tréningovú skupinu (možno označiť viac možností) *</span>
                     <div class="checkbox-grid">
                         <label class="checkbox-item">
                             <input type="checkbox" name="Skupina[]" value="Pondelok 16:00 - Mladší 5 - 8 rokov">
-                            <span>Pondelok 16:00 - Mladší 5 - 8 rokov</span>
+                            <span>Pondelok 16:00 — Mladší (5–8 rokov)</span>
                         </label>
 
                         <label class="checkbox-item">
                             <input type="checkbox" name="Skupina[]" value="Utorok 16:00 - Starší 9 - 15 rokov">
-                            <span>Utorok 16:00 - Starší 9 - 15 rokov</span>
+                            <span>Utorok 16:00 — Starší (9–15 rokov)</span>
                         </label>
 
                         <label class="checkbox-item">
                             <input type="checkbox" name="Skupina[]" value="Streda 16:00 - Mladší 5 - 8 rokov">
-                            <span>Streda 16:00 - Mladší 5 - 8 rokov</span>
+                            <span>Streda 16:00 — Mladší (5–8 rokov)</span>
                         </label>
 
                         <label class="checkbox-item">
                             <input type="checkbox" name="Skupina[]" value="Štvrtok 16:00 - Starší 9 - 15 rokov">
-                            <span>Štvrtok 16:00 - Starší 9 - 15 rokov</span>
+                            <span>Štvrtok 16:00 — Starší (9–15 rokov)</span>
                         </label>
                     </div>
                 </div>
@@ -469,15 +604,15 @@
             <p>Každý progres začína prvým krokom. Napíš mi a spoločne nastavíme plán, ktorý bude fungovať dlhodobo.</p>
             <div class="footer-buttons">
                 <a href="tel:+421910109147" class="footer-btn">Zavolať</a>
-                <a href="https://wa.me/421910109147" target="_blank" class="footer-btn red">WhatsApp</a>
+                <a href="https://wa.me/421910109147" target="_blank" rel="noopener noreferrer" class="footer-btn red">WhatsApp</a>
             </div>
         </div>
 
         <div class="footer-contact">
             <h3>Kontakt</h3>
             <a href="tel:+421910109147">+421 910 109 147</a>
-            <a href="mailto:hello@strengthoflife.sk">hello@strengthoflife.sk</a>
-            <a href="https://www.instagram.com/miroslav_hajek_tri/" target="_blank">IG: @miroslav_hajek_tri</a>
+            <a href="mailto:miroslavhajek5@gmail.com">miroslavhajek5@gmail.com</a>
+            <a href="https://www.instagram.com/strength_of_life_/" target="_blank" rel="noopener noreferrer">Instagram: @strength_of_life_</a>
             <p>Fullova 1<br>Rajec, Slovensko</p>
         </div>
     </div>
