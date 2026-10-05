@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <meta name="description" content="Ukážka súkromného portálu StrengthofLife pre tréningové materiály a klientské výbery.">
+    <title>Klientsky portál | StrengthofLife</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <div class="demo-banner"><span class="demo-dot"></span> SÚKROMÝ KLIENTSKY PORTÁL · STRENGTHOFLIFE</div>
+    <main class="auth-screen" id="authScreen">
+        <section class="auth-card">
+            <img src="../images/logo.svg" alt="Strength of Life" class="auth-logo">
+            <p class="eyebrow">KLIENTSKY PORTÁL</p>
+            <h1 id="authTitle">Prihlásenie</h1>
+            <p class="auth-lede" id="authLede">Prihlás sa do svojho súkromného priestoru s tréningovými materiálmi.</p>
+            <div class="auth-setup" id="authSetup" hidden><strong>Portál čaká na pripojenie databázy.</strong><p>Doplň URL a verejný publishable kľúč Supabase do <code>supabase-config.js</code>.</p></div>
+            <form class="auth-form" id="loginForm" hidden>
+                <label>E-mail<input id="loginEmail" type="email" autocomplete="username" required></label>
+                <label>Heslo<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+                <button class="button primary auth-submit" type="submit">Prihlásiť sa</button>
+                <button class="auth-link" id="forgotPassword" type="button">Zabudnuté heslo?</button>
+                <button class="auth-link" id="showSignup" type="button">Ešte nemáš účet? Vytvor si ho</button>
+            </form>
+            <form class="auth-form" id="signupForm" hidden>
+                <label>Meno a priezvisko<input id="signupName" type="text" autocomplete="name" maxlength="120" required></label>
+                <label>E-mail<input id="signupEmail" type="email" autocomplete="email" maxlength="254" required></label>
+                <label>Heslo<input id="signupPassword" type="password" autocomplete="new-password" minlength="10" required></label>
+                <label>Potvrdiť heslo<input id="signupPasswordConfirm" type="password" autocomplete="new-password" minlength="10" required></label>
+                <button class="button primary auth-submit" type="submit">Vytvoriť klientsky účet</button>
+                <button class="auth-link" id="showLogin" type="button">Už mám účet — prihlásiť sa</button>
+            </form>
+            <form class="auth-form" id="setPasswordForm" hidden>
+                <label>Nové heslo<input id="newPassword" type="password" autocomplete="new-password" minlength="10" required></label>
+                <label>Potvrdiť nové heslo<input id="confirmPassword" type="password" autocomplete="new-password" minlength="10" required></label>
+                <button class="button primary auth-submit" type="submit">Nastaviť heslo</button>
+            </form>
+            <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
+            <p class="auth-footnote">Po potvrdení e-mailu ti tréner sprístupní tvoje návody.</p>
+        </section>
+    </main>
+    <div class="app-shell" id="appShell" hidden>
+        <aside class="sidebar" id="sidebar">
+            <a class="brand" href="#overview" aria-label="StrengthofLife portál">
+                <img src="../images/logo.svg" alt="Strength of Life">
+                <span class="brand-caption">KLIENTSKY PORTÁL</span>
+            </a>
+            <div class="workspace-label">PRACOVNÝ PRIESTOR</div>
+            <nav class="side-nav" aria-label="Hlavná navigácia">
+                <button class="nav-item active" data-view="overview"><span class="nav-icon">⌂</span>Prehľad</button>
+                <button class="nav-item" data-view="clients"><span class="nav-icon">♙</span>Klienti <span class="nav-count">4</span></button>
+                <button class="nav-item" data-view="library"><span class="nav-icon">▤</span>Knižnica návodov <span class="nav-count">12</span></button>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="security-note"><span class="lock-icon">⌑</span><div><strong>Súkromný priestor</strong><small>Prístup podľa účtu</small></div></div>
+                <div class="profile-row"><span class="avatar" id="sidebarInitials">?</span><span><strong id="sidebarName">Používateľ</strong><small id="sidebarRole">StrengthofLife</small></span><button class="dots" id="signOut" type="button" aria-label="Odhlásiť sa">•••</button></div>
+            </div>
+        </aside>
+
+        <main class="main-area">
+            <header class="topbar">
+                <button class="mobile-menu" id="mobileMenu" aria-label="Otvoriť navigáciu">☰</button>
+                <div class="breadcrumbs"><span>StrengthofLife</span><span class="crumb-sep">/</span><strong id="currentCrumb">Prehľad</strong></div>
+                <div class="top-actions"><span class="preview-chip"><i></i> ZABEZPEČENÉ</span><button class="profile-button" id="topProfile"><span class="avatar small" id="topInitials">?</span><span id="topName">Účet</span></button></div>
+            </header>
+
+            <section class="page-view visible" id="view-overview">
+                <div class="welcome-row"><div><p class="eyebrow" id="welcomeDate"></p><h1>Dobrý deň, <span id="welcomeName">tréner</span><span class="red-dot">.</span></h1><p class="lede">Tu máš rýchly prehľad o klientoch a ich tréningových materiáloch.</p></div><button class="button primary" data-action="new-assignment"><span>＋</span> Nový výber</button></div>
+                <div class="stats-grid">
+                    <article class="stat-card"><span class="stat-icon red">♙</span><span class="stat-label">KLIENTI</span><strong id="activeClientCount">—</strong><small>účty v portáli</small></article>
+                    <article class="stat-card"><span class="stat-icon amber">▤</span><span class="stat-label">NÁVODY</span><strong id="libraryGuideCount">—</strong><small>v 6 kategóriách</small></article>
+                    <article class="stat-card"><span class="stat-icon green">↗</span><span class="stat-label">PRIRADENÉ MATERIÁLY</span><strong id="assignmentTotal">—</strong><small>naprieč klientmi</small></article>
+                </div>
+
+                <div class="section-heading"><div><p class="eyebrow">RÝCHLY PRÍSTUP</p><h2>Naposledy otvorení klienti</h2></div><button class="text-button" data-view="clients">Všetci klienti <span>→</span></button></div>
+                <div class="panel client-list-panel">
+                    <div class="table-head"><span>KLIENT</span><span>MATERIÁLY</span><span>NAPOSLEDY UPRAVENÉ</span><span></span></div>
+                    <div id="recentClients"></div>
+                </div>
+
+                <div class="section-heading category-heading"><div><p class="eyebrow">OBSAH</p><h2>Knižnica návodov</h2></div><button class="text-button" data-view="library">Otvoriť knižnicu <span>→</span></button></div>
+                <div class="category-grid" id="categoryGrid"></div>
+                <p class="prototype-note"><strong>Súkromné dáta.</strong> Klient uvidí iba návody, ktoré mu priradí tréner.</p>
+            </section>
+
+            <section class="page-view" id="view-clients">
+                <div class="page-title-row"><div><p class="eyebrow">SPRÁVA KLIENTOV</p><h1>Klienti</h1><p class="lede">Vyhľadaj klienta, pozri jeho materiály alebo priprav nový výber.</p></div><button class="button primary" data-action="new-client"><span>＋</span> Pridať klienta</button></div>
+                <div class="toolbar panel"><label class="search-box"><span>⌕</span><input id="clientSearch" type="search" placeholder="Hľadať meno alebo e-mail…"></label><span class="filter-button">Aktívne účty</span><span class="toolbar-count"></span></div>
+                <div class="panel client-list-panel full-list"><div class="table-head"><span>KLIENT</span><span>MATERIÁLY</span><span>NAPOSLEDY UPRAVENÉ</span><span></span></div><div id="allClients"></div></div>
+                <p class="prototype-note"><strong>Správa klientov.</strong> Klienti sa zaregistrujú sami cez portál. Materiály uvidia až po ich pridelení.</p>
+            </section>
+
+            <section class="page-view" id="view-library">
+                <div class="page-title-row"><div><p class="eyebrow">OBSAH PRE KLIENTOV</p><h1>Knižnica návodov</h1><p class="lede">Usporiadaj krátke videá a postupy podľa športu alebo témy.</p></div><button class="button primary" data-action="new-guide"><span>＋</span> Pridať návod</button></div>
+                <div class="library-toolbar"><label class="search-box panel"><span>⌕</span><input id="guideSearch" type="search" placeholder="Hľadať v návodoch…"></label><div class="filter-pills" id="categoryFilters"></div></div>
+                <div class="guide-grid" id="guideGrid"></div>
+                <p class="prototype-note"><strong>Súkromné médiá.</strong> Videá sa sprístupnia až po overení oprávnenia prihláseného používateľa.</p>
+            </section>
+
+            <section class="page-view" id="view-client-detail">
+                <button class="back-button" data-view="clients">← Späť na klientov</button>
+                <div class="page-title-row detail-title"><div><p class="eyebrow">KLIENTSKY PROFIL</p><h1 id="detailName">Klient</h1><p class="lede" id="detailEmail"></p></div><button class="button primary" data-action="assign-current"><span>＋</span> Priradiť návod</button></div>
+                <div class="detail-layout"><div class="panel detail-main"><div class="panel-heading"><div><p class="eyebrow">PERSONALIZOVANÝ OBSAH</p><h2>Odporúčané návody</h2></div><span class="private-badge">⌑ Súkromné pre klienta</span></div><div id="assignedGuides"></div></div><aside class="panel client-info"><p class="eyebrow">ZÁKLADNÉ INFORMÁCIE</p><div class="info-line"><small>Stav účtu</small><strong><span class="status-dot"></span> <span id="detailStatus">Aktívny</span></strong></div><div class="info-line"><small>Pridaný</small><strong id="detailSince"></strong></div><div class="info-line"><small>Priradené návody</small><strong id="detailCount"></strong></div><button class="button subtle full-width" data-action="copy-portal-link">Kopírovať adresu portálu</button></aside></div>
+                <p class="prototype-note"><strong>Klientsky prístup.</strong> Klient sa prihlási vlastným účtom a uvidí iba tu priradené návody.</p>
+            </section>
+        </main>
+    </div>
+
+    <template id="clientGuideViewTemplate"><section class="page-view" id="view-client-home"><div class="welcome-row"><div><p class="eyebrow">KLIENTSKY PRIESTOR</p><h1>Moje návody<span class="red-dot">.</span></h1><p class="lede">Tu nájdeš materiály, ktoré ti priradil tréner.</p></div></div><div class="guide-grid" id="clientGuideGrid"></div><p class="empty-state" id="clientEmpty" hidden>Zatiaľ ti neboli priradené žiadne návody.</p></section></template>
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Zavrieť">×</button><div id="modalContent"></div></section></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
